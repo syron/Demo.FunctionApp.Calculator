@@ -16,6 +16,6 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
     
     int result = a + b;
     return req.CreateResponse(HttpStatusCode.OK, new {
-        result: result
+        result = result
     });
 }
