@@ -9,7 +9,9 @@ public class Error {
 } 
 
 public class ApiResult {
-    public ApiResult() {}
+    public ApiResult() {
+        Success = true;
+    }
     public int? Result {get;set;}
     public Error Error {get;set;}
     public bool Success {get;set;}

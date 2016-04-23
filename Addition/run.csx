@@ -24,7 +24,6 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
     int b = int.Parse(data.b.ToString());
     
     int sum = a + b;
-    return req.CreateResponse(HttpStatusCode.OK, new {
-        result = sum
-    });
+    result.Result = sum;
+    return req.CreateResponse(HttpStatusCode.OK, result);
 }
