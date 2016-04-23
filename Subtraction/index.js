@@ -8,7 +8,7 @@ module.exports = function (context, data) {
 
     context.res = {
         body: {
-            Status: true,
+            Success: true,
             Error: null,
             Result: result
         },
