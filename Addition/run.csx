@@ -1,5 +1,3 @@
-#r "Microsoft.AspNet.WebHooks.Receivers"
-#r "Microsoft.AspNet.WebHooks.Common"
 #r "Newtonsoft.Json"
 
 using System;
