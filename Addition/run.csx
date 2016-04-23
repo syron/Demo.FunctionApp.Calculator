@@ -12,6 +12,6 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
     dynamic data = JsonConvert.DeserializeObject(jsonContent);
     
     return req.CreateResponse(HttpStatusCode.OK, new {
-        result = 0;
+        result = 0
     });
 }
