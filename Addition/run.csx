@@ -11,33 +11,8 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
     string jsonContent = await req.Content.ReadAsStringAsync();
     dynamic data = JsonConvert.DeserializeObject(jsonContent);
         
-    int a;
-    bool parseResult = Int32.TryParse(data.a, out a);
-    
-    if (!parseResult) {
-        return req.CreateResponse(HttpStatusCode.BadRequest, new {
-            status: 0,
-            error: {
-                message: "Could not parse a",
-                code: 2
-            },
-            result: null
-        }); 
-    }
-    
-    int b;
-    parseResult = Int32.TryParse(data.b, out b);
-    
-    if (!parseResult) {
-        return req.CreateResponse(HttpStatusCode.BadRequest, new {
-            status: 0,
-            error: {
-                message: "Could not parse b",
-                code: 3
-            },
-            result: null
-        }); 
-    }
+    int a = int.Parse(data.a);
+    int b = int.Parse(data.b);
         
     
     return req.CreateResponse(HttpStatusCode.OK, new {
