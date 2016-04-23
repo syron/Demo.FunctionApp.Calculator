@@ -12,9 +12,12 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
     string jsonContent = await req.Content.ReadAsStringAsync();
     dynamic data = JsonConvert.DeserializeObject(jsonContent);
     
-    //to access values send via request, use: data.value
+    var a = int.Parse(data.a); // todo: use tryParse instead.
+    var b = int.Parse(data.b); // todo: use tryParse instead.
+
+    int result = a + b;
 
     return req.CreateResponse(HttpStatusCode.OK, new {
-        message = $"Hello World"
+        result = result;
     });
 }
