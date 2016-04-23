@@ -4,7 +4,7 @@ module.exports = function (context, data) {
     var a = data.a;
     var b = data.b;
     
-    if (b == 0) {
+    if (b === 0) {
         context.res = {
             body: {
                 Success: false,
@@ -14,7 +14,7 @@ module.exports = function (context, data) {
                 },
                 Result: null
             }
-        }
+        };
         context.done();
         return;
     }
