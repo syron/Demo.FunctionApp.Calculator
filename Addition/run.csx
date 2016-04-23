@@ -13,11 +13,9 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
         
     int a = int.Parse(data.a);
     int b = int.Parse(data.b);
-        
+    
     
     return req.CreateResponse(HttpStatusCode.OK, new {
-        status: 1,
-        error: null,
-        result: (a + b)
+        result: (a+b);
     });
 }
