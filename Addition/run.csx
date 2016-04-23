@@ -10,22 +10,11 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
     
     string jsonContent = await req.Content.ReadAsStringAsync();
     dynamic data = JsonConvert.DeserializeObject(jsonContent);
-    
-    if (data.a == null || data.b == null) {
-        return req.CreateResponse(HttpStatusCode.BadRequest, new {
-            status: 0,
-            error: {
-                message: "Not all required parameters (a and b) have been received.",
-                code: 1
-            },
-            result: null
-        }); 
-    }
-    
+        
     int a;
     bool parseResult = Int32.TryParse(data.a, out a);
     
-    if (!parseResult)
+    if (!parseResult) {
         return req.CreateResponse(HttpStatusCode.BadRequest, new {
             status: 0,
             error: {
@@ -34,11 +23,12 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
             },
             result: null
         }); 
-        
+    }
+    
     int b;
     parseResult = Int32.TryParse(data.b, out b);
     
-    if (!parseResult)
+    if (!parseResult) {
         return req.CreateResponse(HttpStatusCode.BadRequest, new {
             status: 0,
             error: {
@@ -47,11 +37,12 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
             },
             result: null
         }); 
+    }
         
     
     return req.CreateResponse(HttpStatusCode.OK, new {
         status: 1,
-            error: null,
-            result: (a + b)
+        error: null,
+        result: (a + b)
     });
 }
