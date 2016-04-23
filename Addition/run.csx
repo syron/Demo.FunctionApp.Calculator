@@ -11,8 +11,8 @@ public static async Task<object> Run(HttpRequestMessage req, TraceWriter log)
     string jsonContent = await req.Content.ReadAsStringAsync();
     dynamic data = JsonConvert.DeserializeObject(jsonContent);
         
-    int a = int.Parse(data.a);
-    int b = int.Parse(data.b);
+    int a = int.Parse(data.a.ToString());
+    int b = int.Parse(data.b.ToString());
     
     int result = a + b;
     return req.CreateResponse(HttpStatusCode.OK, new {
