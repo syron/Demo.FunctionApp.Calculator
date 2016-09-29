@@ -13,4 +13,5 @@ Example:
 
 ## About the author
 
-Robert Mayer - www.afconsult.com
+Robert Mayer
+www.afconsult.com
