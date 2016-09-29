@@ -10,7 +10,8 @@ module.exports = function (context, data) {
         body: {
             Success: true,
             Error: null,
-            Result: result
+            Result: result,
+            Message: "The result of 'a - b' is " + result
         },
         status: 200
     };
