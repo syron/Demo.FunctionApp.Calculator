@@ -10,3 +10,7 @@ Example:
 	"a": 10,
 	"b": 5
 }`
+
+## About the author
+
+Robert Mayer - www.afconsult.com
