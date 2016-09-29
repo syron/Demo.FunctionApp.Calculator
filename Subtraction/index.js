@@ -11,7 +11,7 @@ module.exports = function (context, data) {
             Success: true,
             Error: null,
             Result: result,
-            Message: "The result of 'a - b' is " + result
+            Message: "The result of '" + a + "-" + b + "' is " + result
         },
         status: 200
     };
