@@ -3,9 +3,8 @@ module.exports = function (context, data) {
 
     var a = data.a;
     var b = data.b;
-    var c = data.c;
     
-    var result = a - b - c;
+    var result = a - b;
 
     context.res = {
         body: {
