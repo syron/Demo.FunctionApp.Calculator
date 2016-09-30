@@ -3,15 +3,16 @@ module.exports = function (context, data) {
 
     var a = data.a;
     var b = data.b;
+    var c = data.c;
     
-    var result = a - b;
+    var result = a - b - c;
 
     context.res = {
         body: {
             Success: true,
             Error: null,
             Result: result,
-            Message: "The result of '" + a + "-" + b + "' is " + result
+            Message: "The result of '" + a + "-" + b + "-" + c + "' is " + result
         },
         status: 200
     };
